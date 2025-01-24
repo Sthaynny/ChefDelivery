@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StoreDetailsView: View {
     
-    let store: OrderType
+    let store: StoreType
     var body: some View {
         Text(store.name)
     }
