@@ -22,6 +22,7 @@ struct ProductDetailView: View {
                     .font(.title)
                     .bold()
                     .padding(.horizontal)
+                    .padding(.top)
                 Text(product.description)
                     .padding(.horizontal)
                 Text(product.formatPrice)
