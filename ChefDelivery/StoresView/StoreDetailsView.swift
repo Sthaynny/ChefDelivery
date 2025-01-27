@@ -47,7 +47,7 @@ struct StoreDetailsView: View {
                     product in
                     
                     NavigationLink {
-                        ProductDetailView()
+                        ProductDetailView(product: product)
                     } label: {
                         HStack(spacing: 8){
                             VStack(alignment: .leading, spacing: 8){
