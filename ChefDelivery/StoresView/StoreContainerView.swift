@@ -27,31 +27,7 @@ struct StoreContainerView: View {
                 Text(title)
                     .font(.headline)
                 Spacer()
-                Menu("Filtrar"){
-                    Button {
-                        filterProd = 0
-                    } label: {
-                        Text("Limpar")
-                            .foregroundColor(Color("ColorRed"))
-                    }
-                    Divider()
-                    ForEach(1...5, id: \.self){ index in
-                        Button{
-                            filterProd = index
-                        }label: {
-                            if index > 1 {
-                                Text("\(index) estrelas ou +")
-                                    .font(.title3)
-                                .foregroundColor(.black)
-                               
-                            }else{
-                                Text("\(index) estrela ou +")
-                                    .font(.title3)
-                                    .foregroundColor(.black)
-                            }
-                        }
-                    }
-                }
+                StoreMenuFilterView(filterProd: $filterProd)
             }
             VStack(alignment: .leading, spacing: 30){
                 
