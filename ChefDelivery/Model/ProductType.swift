@@ -12,4 +12,8 @@ struct ProductType : Identifiable{
     let description:String
     let image:String
     let price:Double
+    
+    var formatPrice:String{
+        return "R$ \(price.formatPrice())"
+    }
 }
