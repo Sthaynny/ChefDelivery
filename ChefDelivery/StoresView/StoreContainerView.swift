@@ -28,6 +28,13 @@ struct StoreContainerView: View {
                     .font(.headline)
                 Spacer()
                 Menu("Filtrar"){
+                    Button {
+                        filterProd = 0
+                    } label: {
+                        Text("Limpar")
+                            .foregroundColor(Color("ColorRed"))
+                    }
+                    Divider()
                     ForEach(1...5, id: \.self){ index in
                         Button{
                             filterProd = index
@@ -50,10 +57,12 @@ struct StoreContainerView: View {
                 
                 if filterStore.isEmpty {
                     Text("Não foi possivel encontrar o Loja de acordo com o filtro!")
-                        .font(.title2)
+                        .font(.title3)
                         .bold()
                         .foregroundColor(Color("ColorRed"))
                         .frame(maxWidth: .infinity)
+                        .padding(.top)
+                        .padding(.horizontal)
                 }else{
                     ForEach(filterStore){ mock in
                         NavigationLink{
