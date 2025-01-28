@@ -18,7 +18,7 @@ struct HomeView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                BackgroundHomeView(isAnimating: isAnimating, width: geometry.size.width, height: geometry.size.h)
+                BackgroundHomeView(isAnimating: isAnimating, width: geometry.size.width, height: geometry.size.height)
                 
                 VStack {
                     BodyHomeView(isAnimating: isAnimating, imageOffset: $imageOffset)
