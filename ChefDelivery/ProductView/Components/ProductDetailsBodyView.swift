@@ -43,6 +43,5 @@ struct ProductDetailsBodyView: View {
 }
 
 #Preview {
-    @Previewable @State var prod = 1
-    ProductDetailsBodyView(productQtt: $prod)
+    ProductDetailsBodyView(productQtt: .constant(0))
 }

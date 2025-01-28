@@ -43,7 +43,5 @@ struct StoreMenuFilterView: View {
 }
 
 #Preview {
-    
-    @Previewable @State   var countPreview: Int = 0
-    StoreMenuFilterView(filterProd:  $countPreview)
+    StoreMenuFilterView(filterProd:  .constant(0))
 }
