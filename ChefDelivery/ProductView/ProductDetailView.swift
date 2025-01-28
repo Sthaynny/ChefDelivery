@@ -13,54 +13,9 @@ struct ProductDetailView: View {
     
     var body: some View {
         VStack {
-            VStack(alignment: .leading, spacing: 16) {
-                Image(product.image)
-                    .resizable()
-                    .scaledToFit()
-                    .shadow(radius: 20)
-                Text(product.name)
-                    .font(.title)
-                    .bold()
-                    .padding(.horizontal)
-                    .padding(.top)
-                Text(product.description)
-                    .padding(.horizontal)
-                Text(product.formatPrice)
-                    .bold()
-                    .font(.title3)
-                    .padding(.horizontal)
-                
-            }
+            ProductDetailsHeadersView(product: product)
             Spacer()
-            VStack(spacing: 16){
-                Text("Quantidade")
-                    .bold()
-                    .font(.title3)
-                HStack(spacing: 8) {
-                    Button {
-                        if productQtt > 0{
-                            productQtt-=1
-                        }
-                    } label: {
-                        Image(systemName: "minus.circle.fill")
-                            .font(.title)
-                            .bold( )
-                    }
-                    Text("\(productQtt)")
-                        .font(.title2)
-                        .bold()
-                    
-                    Button {
-                        
-                        productQtt+=1
-                    } label: {
-                        Image(systemName: "plus.circle.fill")
-                            .font(.title)
-                            .bold( )
-                    }
-
-                }
-            }
+            ProductDetailsBodyView(productQtt: $productQtt)
             Spacer()
             Button {
                 //action
